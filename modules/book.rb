@@ -9,5 +9,9 @@ class Book < Item
     @cover_state = cover_state
   end
 
-  can_be_archived?
+  def can_be_archived?
+    return true if can_be_archived? == true || cover_state == 'bad'
+
+    false
+  end
 end
