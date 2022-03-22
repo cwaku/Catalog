@@ -1,6 +1,7 @@
 # require './music'
 # require_relative './add_book'
 require_relative './book'
+require_relative './label'
 
 class Main
   def initialize
@@ -17,8 +18,9 @@ class Main
       break if option == 10
 
       list_books if option == 1
-      add_musica if option == 8
+      list_labels if option == 5
       add_book if option == 7
+      add_musica if option == 8
     end
   end
 
@@ -35,6 +37,13 @@ class Main
     puts '10. Exit'
 
     gets.chomp.to_i
+  end
+
+  def list_labels
+    puts 'Empty labels list' if @labels.empty?
+    @labels.each do |label|
+      puts "Label: #{label.title}, Color: #{label.color}"
+    end
   end
 
   def add_book
