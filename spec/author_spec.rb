@@ -1,12 +1,12 @@
-require_relative '../modules/author.rb'
-require_relative '../modules/game.rb'
+require_relative '../modules/author'
+require_relative '../modules/game'
 
 describe Author do
   context 'Testing Author class' do
     author = Author.new 'Anuar', 'Shaidenov'
     game = Game.new 'multiplayer', '2022-03-22', '1998-12-1'
 
-    it "Author should be instance of Author" do
+    it 'Author should be instance of Author' do
       expect(author).to be_instance_of Author
     end
 
