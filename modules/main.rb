@@ -55,7 +55,12 @@ class Main
     cover_state = gets.chomp
     puts 'Enter the book publish date:'
     publish_date = gets.chomp
+    puts 'Enter label title:'
+    label_title = gets.chomp
+    puts 'Enter label color:'
+    label_color = gets.chomp
     @books.push(Book.new(title, publisher, cover_state, publish_date))
+    @labels.push(Label.new(label_title, label_color))
     puts 'Book added successfully!'
   end
 
