@@ -1,3 +1,5 @@
+require './music'
+
 class Main
   def start
     puts 'Welcome to the App'
@@ -8,6 +10,7 @@ class Main
       break if option == 10
 
       puts 'List books' if option == 1
+      add_musica if option == 8
     end
   end
 
