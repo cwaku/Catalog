@@ -14,6 +14,3 @@ class Book < Item
     super || cover_state == 'bad'
   end
 end
-
-book = Book.new('The Hobbit', 'Houghton Mifflin', 'good', '1937')
-print book.can_be_archived?
