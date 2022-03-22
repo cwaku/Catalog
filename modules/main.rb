@@ -53,7 +53,7 @@ class Main
   def list_books
     puts 'Empty books list' if @books.empty?
     @books.each do |book|
-      puts "Title: #{book.title}, publisher: #{book.publisher}, cover state: #{book.cover_state}, publish date: #{book.publish_date}"
+      puts "Title: #{book.title}, Publisher: #{book.publisher}, Publish date: #{book.publish_date}"
     end
   end
 end
