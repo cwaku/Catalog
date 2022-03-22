@@ -1,4 +1,5 @@
-require './music'
+# require './music'
+require_relative './add_book'
 
 class Main
   def start
@@ -11,6 +12,7 @@ class Main
 
       puts 'List books' if option == 1
       add_musica if option == 8
+      add_book if option == 7
     end
   end
 
