@@ -7,10 +7,13 @@ class Main
   def initialize
     @books = []
     @games = []
+    @authors = []
     @labels = []
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def start
+    # rubocop:enable Metrics/CyclomaticComplexity
     puts 'Welcome to the App'
     puts 'Choose an option below:'
 
@@ -20,6 +23,7 @@ class Main
 
       list_books if option == 1
       list_games if option == 3
+      list_authors if option == 6
       add_musica if option == 8
       add_game if option == 9
       add_book if option == 7
@@ -61,14 +65,25 @@ class Main
     end
   end
 
+  def list_authors
+    if @authors.empty?
+      puts 'Author list is empty'
+      return
+    end
+
+    @authors.each_with_index do |author, i|
+      puts "#{i + 1}. First name: #{author.first_name}, Last name: #{author.last_name}"
+    end
+  end
+
   def add_game
-    puts "Enter multiplayer: "
+    puts 'Enter multiplayer: '
     multiplayer = gets.chomp
 
-    puts "Enter the last played date [YYYY-MM-DD]: "
+    puts 'Enter the last played date [YYYY-MM-DD]: '
     last_played_at = gets.chomp
-    
-    puts "Enter the publish date [YYYY-MM-DD]: "
+
+    puts 'Enter the publish date [YYYY-MM-DD]: '
     publish_date = gets.chomp
 
     @games << Game.new(multiplayer, last_played_at, publish_date)
@@ -77,12 +92,14 @@ class Main
 
   def list_games
     if @games.empty?
-      puts "No games added!" 
+      puts 'No games added!'
       return
     end
 
     @games.each_with_index do |game, i|
+      # rubocop:disable Metrics/Layout/LineLength
       puts "#{i + 1}. Multiplayer: #{game.multiplayer}, Last played at: #{game.last_played_at}, Publish date: #{game.publish_date}"
+      # rubocop:enable Metrics/Layout/LineLength
     end
   end
 end
