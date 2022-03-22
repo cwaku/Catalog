@@ -27,5 +27,10 @@ describe Author do
       author.add_item(game)
       expect(author.items[0]).to eq game
     end
+    
+    it 'Item should have a correct type of author' do
+      author.add_item(game)
+      expect(author.items[0].author).to be_instance_of Author
+    end
   end
 end
