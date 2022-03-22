@@ -1,11 +1,9 @@
-require './item'
-
-class Label < Item
+class Label
   attr_accessor :title, :color
+  attr_reader :items, :id
 
   def initialize(title, color)
-    super(genre, author, source, label, publish_date)
-    @id = rand(1..100)
+    @id = id || Random.rand(1..100)
     @title = title
     @color = color
     @items = []
