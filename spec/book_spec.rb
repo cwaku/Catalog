@@ -2,7 +2,7 @@ require_relative '../modules/book'
 
 describe Book do
   context 'Testing Book class' do
-    book = Book.new 'The Hobbit', 'Houghton Mifflin', 'good', '1937'
+    book = Book.new 'The Hobbit', 'Houghton Mifflin', 'good', '1937-03-22'
 
     it 'Book should be instance of Book' do
       expect(book).to be_instance_of Book
@@ -21,7 +21,7 @@ describe Book do
     end
 
     it "Book's publish date should be correct" do
-      expect(book.publish_date).to eq 1937
+      expect(book.publish_date.year).to eq 1937
     end
 
     it 'Book should be able to be archived' do

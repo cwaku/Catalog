@@ -68,6 +68,9 @@ class Main
     label_title = gets.chomp
     puts 'Enter label color:'
     label_color = gets.chomp
+    new_label = Label.new(label_title, label_color)
+    new_label.add_item(Book.new(title, publisher, cover_state, publish_date))
+
     @books.push(Book.new(title, publisher, cover_state, publish_date))
     @labels.push(Label.new(label_title, label_color))
     puts 'Book added successfully!'
