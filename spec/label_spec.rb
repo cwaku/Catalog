@@ -1,4 +1,4 @@
-require_relative './modules/label'
+require_relative '../modules/label'
 
 describe Label do
   context 'Testing Label class' do
