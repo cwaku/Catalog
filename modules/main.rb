@@ -5,12 +5,16 @@ require_relative './label'
 require_relative 'game'
 require_relative 'music'
 require_relative '../saveData/save_albums'
+require_relative 'author'
+require_relative '../saveData/preserve_games'
 
 class Main
+  include PreserveGames
   include SaveAlbums
+
   def initialize
     @books = []
-    @games = []
+    @games = load_games
     @authors = []
     @albums = []
     @genres = []
@@ -27,10 +31,12 @@ class Main
 
     loop do
       option = list_options
-      break if option == 10
+      if option == 10
+        save_games(@games)
+        break
+      end
 
       list_books if option == 1
-      list_labels if option == 5
       list_games if option == 3
       list_labels if option == 5
       list_authors if option == 6
@@ -96,13 +102,13 @@ class Main
   end
 
   def list_authors
-    if @authors.empty?
+    if @games.empty?
       puts 'Author list is empty'
       return
     end
 
-    @authors.each_with_index do |author, i|
-      puts "#{i + 1}. First name: #{author.first_name}, Last name: #{author.last_name}"
+    @games.each_with_index do |game, i|
+      puts "#{i + 1}. First name: #{game.author.first_name}, Last name: #{game.author.last_name}"
     end
   end
 
@@ -116,7 +122,16 @@ class Main
     puts 'Enter the publish date [YYYY-MM-DD]: '
     publish_date = gets.chomp
 
-    @games << Game.new(multiplayer, last_played_at, publish_date)
+    puts 'Enter the author first name: '
+    first_name = gets.chomp
+
+    puts 'Enter the author last name: '
+    last_name = gets.chomp
+
+    game = Game.new(multiplayer, last_played_at, publish_date)
+    game.author = Author.new(first_name, last_name)
+
+    @games << game
     puts 'Game added successfully!'
   end
 
