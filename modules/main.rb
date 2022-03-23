@@ -35,7 +35,7 @@ class Main
       list_labels if option == 5
       list_authors if option == 6
       list_albums if option == 2
-      load_albums if option == 2
+      # load_albums if option == 2
       create_album if option == 8
       save_albums  if option == 8
       list_genres if option == 4

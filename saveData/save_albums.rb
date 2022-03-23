@@ -1,3 +1,4 @@
+require_relative '../modules/music'
 module  SaveAlbums
     def create_album
   puts 'Enter album genre'
@@ -25,6 +26,16 @@ def list_albums
    end
   end
 
+def list_genres
+  if @genres.length.zero?
+    puts "No Genres configured!Please add a genre"
+  else
+    @genres.map do |genre|
+      puts "ID:#{genre.id}, GenreName:#{genre.name}"
+    end
+  end
+end
+
   #save data
 
   def save_albums
@@ -45,27 +56,8 @@ def save_genres
   end
 end
 
-def list_genres
-  if @genres.length.zero?
-    puts "No Genres configured!Please add a genre"
-  else
-    @genres.map do |genre|
-      puts "ID:#{genre.id}, GenreName:#{genre.name}"
-    end
-  end
-end
-
 #load data
-  def load_albums
-  if File.exist?('./data/music_albums.json')
-    albums = JSON.parse(File.read('./data/music_albums.json'))
-    albums.map do |album|
-      MusicAlbum.new(album['on_spotify'].to_s, album['Publish_date'].to_s)
-    end
-  else
-    []
-  end
-end
+
 
 
 end
