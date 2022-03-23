@@ -1,7 +1,7 @@
 CREATE DATABSE IF NOT EXISTS `catalog`;
 
--- Create item table --
-CREATE TABLE IF NOT EXISTS `item` (
+-- Create item table
+CREATE TABLE IF NOT EXISTS `items` (
   id INT GENERATED ALWAYS AS IDENTITY,
   genre_id INT,
   label_id INT,
@@ -30,3 +30,18 @@ CREATE TABLE authors (
 );
 
 -- Create books table
+CREATE TABLE books (
+  id INT,
+  title VARCHAR(100),
+  publisher VARCHAR(100),
+  cover_state VARCHAR(100),
+  FOREIGN KEY (id) REFERENCES items (id)
+);
+
+-- create labels table
+CREATE TABLE labels (
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  title VARCHAR(100),
+  color VARCHAR(100),
+  PRIMARY KEY (id)
+);
