@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   FOREIGN KEY (author_id) REFERENCES authors(id),
 );
 
--- Create games table --
+-- Create games table
 CREATE TABLE games (
   id INT GENERATED ALWAYS AS IDENTITY,
   multiplayer VARCHAR(255),
@@ -21,7 +21,7 @@ CREATE TABLE games (
   PRIMARY KEY (id),
   FOREIGN KEY (id) REFERENCES items (id)
 );
--- Create items table --
+-- Create authors table
 CREATE TABLE authors (
   id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   first_name VARCHAR(255),
@@ -29,4 +29,4 @@ CREATE TABLE authors (
   PRIMARY KEY (id)
 );
 
--- Create books table --
+-- Create books table
