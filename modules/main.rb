@@ -61,8 +61,8 @@ class Main
 
   def list_labels
     puts 'Empty labels list' if @books.empty?
-    @books.each do |book|
-      puts "Label: #{book.label.title}, Color: #{book.label.color}"
+    @books.each_with_index do |book, i|
+      puts "#{i + 1}. Label: #{book.label.title}, Color: #{book.label.color}"
     end
   end
 
@@ -90,8 +90,8 @@ class Main
 
   def list_books
     puts 'Empty books list' if @books.empty?
-    @books.each do |book|
-      puts "Title: #{book.title}, Publisher: #{book.publisher}, Publish date: #{book.publish_date}"
+    @books.each_with_index do |book, i|
+      puts "#{i + 1}. Title: #{book.title}, Publisher: #{book.publisher}, Publish date: #{book.publish_date}"
     end
   end
 
