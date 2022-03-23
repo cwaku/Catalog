@@ -21,7 +21,7 @@ describe Book do
     end
 
     it "Book's publish date should be correct" do
-      expect(book.publish_date.year).to eq 1937
+      expect(book.publish_date).to eq 1937
     end
 
     it 'Book should be able to be archived' do
