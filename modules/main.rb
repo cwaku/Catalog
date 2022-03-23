@@ -1,6 +1,7 @@
 # require './music'
 # require_relative './add_book'
 require_relative './book'
+require_relative './label'
 require_relative 'game'
 
 class Main
@@ -12,8 +13,10 @@ class Main
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/PerceivedComplexity
   def start
     # rubocop:enable Metrics/CyclomaticComplexity
+    # rubocop:enable Metrics/PerceivedComplexity
     puts 'Welcome to the App'
     puts 'Choose an option below:'
 
@@ -22,12 +25,14 @@ class Main
       break if option == 10
 
       list_books if option == 1
+      list_labels if option == 5
       list_games if option == 3
       list_labels if option == 5
       list_authors if option == 6
       add_musica if option == 8
       add_game if option == 9
       add_book if option == 7
+      add_musica if option == 8
     end
   end
 
