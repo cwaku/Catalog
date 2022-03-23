@@ -3,6 +3,7 @@
 require_relative './book'
 require_relative './label'
 require_relative 'game'
+require_relative 'author'
 
 class Main
   def initialize
@@ -88,13 +89,13 @@ class Main
   end
 
   def list_authors
-    if @authors.empty?
+    if @games.empty?
       puts 'Author list is empty'
       return
     end
 
-    @authors.each_with_index do |author, i|
-      puts "#{i + 1}. First name: #{author.first_name}, Last name: #{author.last_name}"
+    @games.each_with_index do |game, i|
+      puts "#{i + 1}. First name: #{game.author.first_name}, Last name: #{game.author.last_name}"
     end
   end
 
@@ -108,7 +109,16 @@ class Main
     puts 'Enter the publish date [YYYY-MM-DD]: '
     publish_date = gets.chomp
 
-    @games << Game.new(multiplayer, last_played_at, publish_date)
+    puts 'Enter the author first name: '
+    first_name = gets.chomp
+
+    puts 'Enter the author last name: '
+    last_name = gets.chomp
+
+    game = Game.new(multiplayer, last_played_at, publish_date)
+    game.author = Author.new(first_name, last_name)
+
+    @games << game
     puts 'Game added successfully!'
   end
 
