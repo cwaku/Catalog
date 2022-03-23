@@ -15,6 +15,7 @@ module PreserveBooks
     else
       File.write('./data/books.json', [])
     end
+    data
   end
 
   def save_books(books)
