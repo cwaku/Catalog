@@ -4,11 +4,14 @@ require_relative './book'
 require_relative './label'
 require_relative 'game'
 require_relative 'author'
+require_relative '../saveData/preserve_games'
 
 class Main
+  include PreserveGames
+
   def initialize
     @books = []
-    @games = []
+    @games = load_games
     @authors = []
     # @labels = []
   end
@@ -23,7 +26,10 @@ class Main
 
     loop do
       option = list_options
-      break if option == 10
+      if option == 10
+        save_games(@games)
+        break
+      end
 
       list_books if option == 1
       list_labels if option == 5
