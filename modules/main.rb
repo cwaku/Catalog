@@ -13,8 +13,10 @@ class Main
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/PerceivedComplexity
   def start
     # rubocop:enable Metrics/CyclomaticComplexity
+    # rubocop:enable Metrics/PerceivedComplexity
     puts 'Welcome to the App'
     puts 'Choose an option below:'
 
