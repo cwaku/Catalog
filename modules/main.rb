@@ -13,7 +13,6 @@ class Main
     @books = []
     @games = load_games
     @authors = []
-    # @labels = []
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -32,7 +31,6 @@ class Main
       end
 
       list_books if option == 1
-      list_labels if option == 5
       list_games if option == 3
       list_labels if option == 5
       list_authors if option == 6
