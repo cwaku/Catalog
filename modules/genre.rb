@@ -1,4 +1,4 @@
-class Genre 
+class Genre
   attr_accessor :name
   attr_reader :id, :items
 
@@ -19,5 +19,4 @@ class Genre
       return song.move_to_archive, @id, song.genre.name if song.genre == self
     end
   end
-  
 end

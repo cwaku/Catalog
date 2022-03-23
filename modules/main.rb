@@ -3,8 +3,8 @@
 require_relative './book'
 require_relative './label'
 require_relative 'game'
- require_relative 'music'
- require_relative'../saveData/save_albums'
+require_relative 'music'
+require_relative '../saveData/save_albums'
 
 class Main
   include SaveAlbums
@@ -37,7 +37,7 @@ class Main
       list_albums if option == 2
       # load_albums if option == 2
       create_album if option == 8
-      save_albums  if option == 8
+      save_albums if option == 8
       list_genres if option == 4
       add_game if option == 9
       add_book if option == 7
