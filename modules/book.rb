@@ -1,4 +1,5 @@
 require_relative './item'
+require_relative './label'
 
 class Book < Item
   attr_accessor :publisher, :cover_state, :title
@@ -14,3 +15,9 @@ class Book < Item
     super || cover_state == 'bad'
   end
 end
+
+book = Book.new('The Hobbit', 'Houghton Mifflin', 'good', '1937-03-22')
+new_label = Label.new('Test', 'red')
+book.label = new_label
+
+puts book.label.title

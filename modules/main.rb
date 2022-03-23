@@ -8,7 +8,7 @@ class Main
     @books = []
     @games = []
     @authors = []
-    @labels = []
+    # @labels = []
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -23,6 +23,7 @@ class Main
 
       list_books if option == 1
       list_games if option == 3
+      list_labels if option == 5
       list_authors if option == 6
       add_musica if option == 8
       add_game if option == 9
@@ -45,6 +46,13 @@ class Main
     gets.chomp.to_i
   end
 
+  def list_labels
+    puts 'Empty labels list' if @books.empty?
+    @books.each do |book|
+      puts "Label: #{book.label.title}, Color: #{book.label.color}"
+    end
+  end
+
   def add_book
     puts 'Enter the book title:'
     title = gets.chomp
@@ -54,7 +62,16 @@ class Main
     cover_state = gets.chomp
     puts 'Enter the book publish date:'
     publish_date = gets.chomp
-    @books.push(Book.new(title, publisher, cover_state, publish_date))
+    puts 'Enter label title:'
+    label_title = gets.chomp
+    puts 'Enter label color:'
+    label_color = gets.chomp
+    new_label = Label.new(label_title, label_color)
+    book = Book.new(title, publisher, cover_state, publish_date)
+    book.label = new_label
+
+    @books.push(book)
+    # @labels.push(Label.new(label_title, label_color))
     puts 'Book added successfully!'
   end
 
