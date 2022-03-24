@@ -2,6 +2,8 @@
 
 > A console app that will help you to keep a record of different types of things you won: books, music albums, movies, and games
 
+[Wathc the Video Presentation](https://drive.google.com/file/d/14dQ0yfdjtAlM94y85INMtOCcvlXFt6xz/view?usp=sharing)
+
 ![SQL diagram](drawSQL.png)
 
 ## Built With
