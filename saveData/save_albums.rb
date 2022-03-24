@@ -1,6 +1,6 @@
 require_relative '../modules/music'
 module SaveAlbums
-require 'json'
+  require 'json'
   def create_album
     puts 'Enter album genre'
     genre = gets.chomp
@@ -8,7 +8,7 @@ require 'json'
     publish_date = gets.chomp
     puts ' On Spotify?[y/n]'
     on_spotify = gets.chomp == 'y' || false
-    @albums.push(MusicAlbum.new(publish_date,  on_spotify))
+    @albums.push(MusicAlbum.new(publish_date, on_spotify))
     @genres.push(Genre.new(genre))
     puts 'New Album Created!'
     save_albums
@@ -20,7 +20,7 @@ require 'json'
       puts 'No albums found!Kindly add an album'
     else
       @albums.map do |album|
-        @genres.map do |gen|
+        @genres.map do |_gen|
           puts " On_Spotify: #{album.on_spotify}, Publish Date: #{album.publish_date}"
         end
       end
@@ -64,7 +64,7 @@ require 'json'
     file = './data/music_albums.json'
     if File.exist?(file)
       JSON.parse(File.read(file)).map do |am|
-        data.push(MusicAlbum.new( am['Publish_date'], am['on_spotify']))
+        data.push(MusicAlbum.new(am['Publish_date'], am['on_spotify']))
       end
     else
       File.write(file, [])
@@ -72,7 +72,7 @@ require 'json'
     data
   end
 
-   def load_genres
+  def load_genres
     data = []
     file = './data/genres.json'
     if File.exist?(file)
@@ -85,5 +85,4 @@ require 'json'
 
     data
   end
-
 end
