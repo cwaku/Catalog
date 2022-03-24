@@ -20,9 +20,7 @@ module SaveAlbums
       puts 'No albums found!Kindly add an album'
     else
       @albums.map do |album|
-        @genres.map do |_gen|
-          puts " On_Spotify: #{album.on_spotify}, Publish Date: #{album.publish_date}"
-        end
+        puts " On_Spotify: #{album.on_spotify}, Publish Date: #{album.publish_date}"
       end
     end
   end

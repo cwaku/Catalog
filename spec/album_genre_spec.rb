@@ -3,7 +3,7 @@ require_relative '../modules/genre'
 
 describe MusicAlbum do
   context 'Should test MusicAlbum class' do
-    album = MusicAlbum.new true, '2020-2-2'
+    album = MusicAlbum.new '2020-2-2 ', true
     genre = Genre.new 'pop'
 
     it 'album should be MusicAlbum instantiation' do
@@ -15,11 +15,11 @@ describe MusicAlbum do
     end
 
     it 'should return  correct spotify status ' do
-      expect(album.publish_date).to eq true
+      expect(album.publish_date.year).to eq 2020
     end
 
     it 'should return  correct date ' do
-      expect(album.on_spotify).to eq '2020-2-2'
+      expect(album.on_spotify).to eq true
     end
 
     it 'should return  correct genre name ' do

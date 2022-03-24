@@ -45,7 +45,6 @@ class Main
       list_authors if option == 6
       list_albums if option == 2
       create_album if option == 8
-      save_albums if option == 8
       list_genres if option == 4
       add_game if option == 9
       add_book if option == 7

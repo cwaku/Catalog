@@ -1,6 +1,18 @@
 [
   {
-    "GenreId": 471,
+    "GenreId": 832,
     "GenreName": "fremulon"
+  },
+  {
+    "GenreId": 56,
+    "GenreName": "then"
+  },
+  {
+    "GenreId": 75,
+    "GenreName": "thewtre"
+  },
+  {
+    "GenreId": 90,
+    "GenreName": "rock"
   }
 ]
