@@ -13,28 +13,31 @@
 To get a local copy up and running follow these simple example steps.
 
 ## Prerequisites
-* A text editor(preferably Visual Studio Code)
+
+- A text editor(preferably Visual Studio Code)
 
 ## Install
-* Ruby
+
+- Ruby
 
 ## Using it Locally
 
-* Clone the project
+- Clone the project
 
-* Clone the repo using the command below
+- Clone the repo using the command below
 
 ```
 git clone https://github.com/cwaku/Catalog.git
 ```
 
-* Navigate to the directory in which you cloned the project and use the command below
+- Navigate to the directory in which you cloned the project and use the command below
 
 ```
 cd Catalog
 ```
 
-* Start the program using the commands below
+- Start the program using the commands below
+
 ```bash
 open terminal
 run the command $irb (interactive ruby shell)
@@ -55,6 +58,12 @@ run the files locally using the command ruby main.rb
 - LinkedIn: [Ricky Mormor](www.linkedin.com/in/rickymormor)
 - Instagram: [@rickymormor](https://instagram.com/rickymormor)
 - Twitter: [@rickymormor](https://twitter.com/rickymormor)
+
+👤 **Anuar Shaidenov**
+
+- GitHub: [@anuarshaidenov](https://github.com/anuarshaidenov)
+- Twitter: [@anuarnyi](https://twitter.com/anuarnyi)
+- LinkedIn: [Anuar Shaidenov](https://www.linkedin.com/in/anuar-shaidenov-365a951b8/)
 
 ## 🤝 Contributing
 
