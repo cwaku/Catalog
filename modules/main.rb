@@ -18,8 +18,8 @@ class Main
     @books = load_books
     @games = load_games
     @authors = []
-    @albums = []
-    @genres = []
+    @albums = load_albums
+    @genres = load_genres
     # @labels = []
   end
 
@@ -44,9 +44,7 @@ class Main
       list_labels if option == 5
       list_authors if option == 6
       list_albums if option == 2
-      # load_albums if option == 2
       create_album if option == 8
-      save_albums if option == 8
       list_genres if option == 4
       add_game if option == 9
       add_book if option == 7
@@ -82,7 +80,7 @@ class Main
     publisher = gets.chomp
     puts 'Enter the book cover state (good or bad):'
     cover_state = gets.chomp
-    puts 'Enter the book publish date:'
+    puts 'Enter the book publish date(YYYY-MM-DD):'
     publish_date = gets.chomp
     puts 'Enter label title:'
     label_title = gets.chomp
