@@ -14,7 +14,6 @@ class Main
   include SaveAlbums
   include PreserveBooks
 
-
   def initialize
     @books = load_books
     @games = load_games
