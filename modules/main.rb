@@ -80,7 +80,7 @@ class Main
     publisher = gets.chomp
     puts 'Enter the book cover state (good or bad):'
     cover_state = gets.chomp
-    puts 'Enter the book publish date:'
+    puts 'Enter the book publish date(YYYY-MM-DD):'
     publish_date = gets.chomp
     puts 'Enter label title:'
     label_title = gets.chomp

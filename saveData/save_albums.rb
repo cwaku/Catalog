@@ -2,9 +2,9 @@ require_relative '../modules/music'
 module SaveAlbums
   require 'json'
   def create_album
-    puts 'Enter album genre'
+    puts 'Enter album genre:'
     genre = gets.chomp
-    puts 'publish date'
+    puts 'publish date(YYYY-MM-DD):'
     publish_date = gets.chomp
     puts ' On Spotify?[y/n]'
     on_spotify = gets.chomp == 'y' || false
