@@ -7,13 +7,16 @@ require_relative 'music'
 require_relative '../saveData/save_albums'
 require_relative 'author'
 require_relative '../saveData/preserve_games'
+require_relative '../saveData/preserve_books'
 
 class Main
   include PreserveGames
   include SaveAlbums
+  include PreserveBooks
+
 
   def initialize
-    @books = []
+    @books = load_books
     @games = load_games
     @authors = []
     @albums = load_albums
@@ -33,6 +36,7 @@ class Main
       option = list_options
       if option == 10
         save_games(@games)
+        save_books(@books)
         break
       end
 
@@ -66,8 +70,8 @@ class Main
 
   def list_labels
     puts 'Empty labels list' if @books.empty?
-    @books.each do |book|
-      puts "Label: #{book.label.title}, Color: #{book.label.color}"
+    @books.each_with_index do |book, i|
+      puts "#{i + 1}. Label: #{book.label.title}, Color: #{book.label.color}"
     end
   end
 
@@ -95,8 +99,8 @@ class Main
 
   def list_books
     puts 'Empty books list' if @books.empty?
-    @books.each do |book|
-      puts "Title: #{book.title}, Publisher: #{book.publisher}, Publish date: #{book.publish_date}"
+    @books.each_with_index do |book, i|
+      puts "#{i + 1}. Title: #{book.title}, Publisher: #{book.publisher}, Publish date: #{book.publish_date}"
     end
   end
 
