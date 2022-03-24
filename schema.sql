@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (id),
   FOREIGN KEY (label_id) REFERENCES labels(id),
   FOREIGN KEY (author_id) REFERENCES authors(id),
+  FOREIGN KEY (genre_id) REFERENCES genres(id)
 );
 
 -- Create games table
@@ -43,5 +44,19 @@ CREATE TABLE labels (
   id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   title VARCHAR(100),
   color VARCHAR(100),
+  PRIMARY KEY (id)
+);
+
+-- create music album table
+CREATE TABLE music_albums (
+  id INT,
+  on_spotify BOOLEAN,
+  FOREIGN KEY (id) REFERENCES items (id)
+);
+
+-- create genres table
+CREATE TABLE genres (
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(100),
   PRIMARY KEY (id)
 );

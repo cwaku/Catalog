@@ -1,13 +1,13 @@
 # require './music'
 # require_relative './add_book'
-require_relative './book'
-require_relative './label'
-require_relative 'game'
-require_relative 'music'
-require_relative '../saveData/save_albums'
-require_relative 'author'
-require_relative '../saveData/preserve_games'
-require_relative '../saveData/preserve_books'
+require_relative './modules/book'
+require_relative './modules/label'
+require_relative './modules/game'
+require_relative './modules/music'
+require_relative './saveData/save_albums'
+require_relative './modules/author'
+require_relative './saveData/preserve_games'
+require_relative './saveData/preserve_books'
 
 class Main
   include PreserveGames
