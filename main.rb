@@ -1,5 +1,3 @@
-# require './music'
-# require_relative './add_book'
 require_relative './modules/book'
 require_relative './modules/label'
 require_relative './modules/game'
@@ -17,10 +15,8 @@ class Main
   def initialize
     @books = load_books
     @games = load_games
-    @authors = []
     @albums = load_albums
     @genres = load_genres
-    # @labels = []
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -40,14 +36,14 @@ class Main
       end
 
       list_books if option == 1
+      list_albums if option == 2
       list_games if option == 3
+      list_genres if option == 4
       list_labels if option == 5
       list_authors if option == 6
-      list_albums if option == 2
-      create_album if option == 8
-      list_genres if option == 4
-      add_game if option == 9
       add_book if option == 7
+      create_album if option == 8
+      add_game if option == 9
     end
   end
 
@@ -91,7 +87,6 @@ class Main
     book.label = new_label
 
     @books.push(book)
-    # @labels.push(Label.new(label_title, label_color))
     puts 'Book added successfully!'
   end
 
