@@ -1,4 +1,5 @@
 require 'date'
+require 'json'
 
 class Item
   attr_accessor :id, :publish_date, :archived

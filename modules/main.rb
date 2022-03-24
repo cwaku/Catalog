@@ -3,18 +3,24 @@
 require_relative './book'
 require_relative './label'
 require_relative 'game'
+require_relative 'music'
+require_relative '../saveData/save_albums'
 require_relative 'author'
 require_relative '../saveData/preserve_games'
 require_relative '../saveData/preserve_books'
 
 class Main
   include PreserveGames
+  include SaveAlbums
   include PreserveBooks
 
   def initialize
     @books = load_books
     @games = load_games
     @authors = []
+    @albums = []
+    @genres = []
+    # @labels = []
   end
 
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -37,10 +43,13 @@ class Main
       list_games if option == 3
       list_labels if option == 5
       list_authors if option == 6
-      add_musica if option == 8
+      list_albums if option == 2
+      # load_albums if option == 2
+      create_album if option == 8
+      save_albums if option == 8
+      list_genres if option == 4
       add_game if option == 9
       add_book if option == 7
-      add_musica if option == 8
     end
   end
 
